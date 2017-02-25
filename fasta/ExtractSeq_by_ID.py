@@ -16,10 +16,10 @@ args = parser.parse_args()
 seqs = []
 for seq in SeqIO.parse(args.input, 'fasta'):
 	if args.match == 'p':
-		if  args.word in seq.id:
+		if args.word in seq.id:
 			seqs.append(seq)
 	else:
-		if  args.word == seq.id:
+		if args.word == seq.id:
 			seqs.append(seq)
 
 SeqIO.write(seqs, args.output, "fasta")
